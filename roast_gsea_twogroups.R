@@ -380,10 +380,14 @@ for (i in 1:length(list_ridgeplots)){
 
 ### Save TSV file of LIMMA and ROAST results ####
 
-write_tsv(roastres1,
+write_tsv(roastout.dffil,
           path = here::here(paste0("ROAST_outout/ROAST_tab_output_",names(db),"_geneset.tsv")))
 
-write_tsv(fitable,
+limma_table <- mutate(fitable,
+                      proteinid = row.names(fitable))
+
+write_tsv(limma_table,
           path = here::here(paste0("ROAST_outout/LIMMA_fit_tab_output_",names(db),"_geneset.tsv")))
+
 
 

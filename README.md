@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # Limma-ROAST on a two-group dataset 
 
 ## Script to run ROAST-Limma on a two-group dataset

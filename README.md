@@ -6,5 +6,5 @@
 
 - It needs to be executed in a RProject environment (this is because of the use of the `here` package to define file locations).
 - It requires the presence of the "msigdb.v7.0.symbols.gmt' file, which is the newest version of the MSIG database (available here:  http://software.broadinstitute.org/gsea/downloads.jsp. This file should be in the same RStudio Project folder from which this script would be executed.
-- It requires an input TXT file with the next structure: 1 protein per row, 1 column of Uniprot Protein IDs and 1 column per experimental condition and/or replicate. 
+- It requires an input TXT file with the next structure: 1 protein per row, 1 column of Uniprot Protein IDs and 1 column per experimental condition and/or replicate. Note: The column containing the Uniprot Protein IDs should be named: "Name".  
 - The helper script should be also present in the same folder where the main script would be executed. 

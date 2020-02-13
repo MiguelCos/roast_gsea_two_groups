@@ -32,7 +32,7 @@ sigdbfile <- 'msigdb.v7.0.symbols.gmt' # last version of the msigdb (available a
 
 ### Set locations of the dataset to analyze ####
 
-inputlocation <- here::here("input_limma.txt") # the name of the input limma file (it should have 1 row per protein and 1 column per condition)
+inputlocation <- here::here("input_limma_example.txt") # the name of the input limma file (it should have 1 row per protein and 1 column per condition)
 
 ### Define experimental design ####
 
@@ -43,7 +43,7 @@ condition2 <- 7 # number of samples associated to the second condition
 
 # Currently available: "GO" == 1, "KEGG" == 2, "REACTOME" == 3, "HALLMARK" == 4, "NABA" == 5
 
-db <- 3 # we set it to 5 to run it agains the NABA geneset
+db <- 4 # we set it to 5 to run it agains the NABA geneset, for instance.
 
 names(db) <- case_when(db == 1 ~ "GO",
                        db == 2 ~ "KEGG",
@@ -380,7 +380,7 @@ for (i in 1:length(list_ridgeplots)){
 
 ### Save TSV file of LIMMA and ROAST results ####
 
-write_tsv(roastout.dffil,
+write_tsv(lmfit_w_genesetcat_w_roastout,
           path = here::here(paste0("ROAST_outout/ROAST_tab_output_",names(db),"_geneset.tsv")))
 
 limma_table <- mutate(fitable,
